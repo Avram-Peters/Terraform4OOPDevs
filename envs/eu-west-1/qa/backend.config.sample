@@ -1,0 +1,4 @@
+bucket="<bucket-name>"
+key="<unique-deployment-key>.tfstate"
+region="us-east-1"
+dynamodb_table="<unique dynamodb tablename>-tfstate-lock"
