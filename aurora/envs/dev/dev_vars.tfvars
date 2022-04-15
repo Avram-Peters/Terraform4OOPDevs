@@ -4,7 +4,7 @@ region = "us-east-1"
 
 database_name = "aurorademo"
 root_user = "thisisalongusername1234"
-root_password = "abc123ghi"
+root_password = "abc123ghi" // the secretsmanager auto-rotation feature will rotate this password immediately upon start.
 aurora_port = "10924"
 skip_final_snapshot = true
 number_of_instances = 2
