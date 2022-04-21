@@ -7,12 +7,16 @@ terraform {
       version = ">= 3.69"
     }
     random = {}
+    null = {}
   }
 }
 
-provider random {}
+provider "random" {}
 
-provider aws  {
+provider "null" {}
+
+provider "aws"  {
+  profile = var.profile
   region=var.region
 }
 

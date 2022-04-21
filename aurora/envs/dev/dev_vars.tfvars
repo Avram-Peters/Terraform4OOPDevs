@@ -2,12 +2,12 @@ application_name = "demo-aurora"
 environment = "demo"
 region = "us-east-1"
 
-database_name = "aurorademo"
-root_user = "thisisalongusername1234"
+database_name = "postgres"
+root_user = "postgres"
 root_password = "abc123ghi" // the secretsmanager auto-rotation feature will rotate this password immediately upon start.
 aurora_port = "10924"
 skip_final_snapshot = true
-number_of_instances = 2
+number_of_instances = 1
 
 required_tags = {
   costcenter: "abc123"

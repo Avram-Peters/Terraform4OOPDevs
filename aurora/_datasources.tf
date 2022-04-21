@@ -1,7 +1,7 @@
 data aws_subnets secured_subnets {
   filter {
     name = "tag:availability"
-    values = ["private"]
+    values = ["public"]
   }
   filter {
     name   = "vpc-id"

@@ -16,6 +16,16 @@ variable environment {
     error_message = "Environment must be in [demo, dev, qa, test, prod]."
   }
 }
+variable sso_profile {
+  type = string
+  description = "Name of the AWS Configured Profile that grants access to Org SSO"
+  default = "sso_profile"
+}
+variable profile {
+  type = string
+  description = "Name of the AWS Configured Profile that grants access to the deployment account"
+  default = "default"
+}
 
 
 #### Database Configuration Variables
@@ -82,6 +92,12 @@ variable number_of_instances {
   type = number
   description = "Number of instances to deploy in the cluster."
   default = 1
+}
+
+variable iam_users  {
+  type = list(string)
+  description = "List of IAM SSO USERNAMES that will have access to this cluster"
+  default = ["abepeters", "joesmith"]
 }
 
 

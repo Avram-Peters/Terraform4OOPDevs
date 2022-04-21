@@ -45,7 +45,11 @@ resource aws_secretsmanager_secret_rotation secret_rotation {
     automatically_after_days = 30
   }
   tags = var.required_tags
-  depends_on = [aws_lambda_function.rotator, aws_lambda_permission.rotate_permission]
+  depends_on = [
+    aws_lambda_function.rotator,
+    aws_lambda_permission.rotate_permission,
+    null_resource.database_role_setup // This will keep the rotator from running before the database is configured.
+  ]
 }
 
 resource aws_lambda_function rotator {
