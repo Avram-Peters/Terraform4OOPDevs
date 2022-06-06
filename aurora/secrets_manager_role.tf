@@ -1,3 +1,4 @@
+/*
 resource aws_iam_role secret_rotator_role {
   name = "${var.application_name}-${var.environment}-rota-role"
   assume_role_policy = data.aws_iam_policy_document.service.json
@@ -34,13 +35,14 @@ resource aws_iam_role_policy secretsmanager_userpolicy2 {
 
 
 
-
+/*
 resource aws_lambda_permission rotate_permission {
   action = "lambda:InvokeFunction"
   function_name = aws_lambda_function.rotator.function_name
   principal = "secretsmanager.amazonaws.com"
   statement_id = "AllowExecutionSecretManager"
 }
+*/
 data aws_iam_policy_document service {
   statement {
     sid = "RotatorPolicy"
@@ -63,6 +65,7 @@ data aws_iam_policy_document SecretsManagerRDSPostgresRotation0 {
     resources = ["*"]
   }
 }
+/*
 data aws_iam_policy_document SecretsManagerRDSPostgresRotation1 {
   statement {
     actions = [
@@ -83,6 +86,7 @@ data aws_iam_policy_document SecretsManagerRDSPostgresRotation1 {
     resources = ["*"]
   }
 }
+*/
 data aws_iam_policy_document SecretsmanagerRDSPostgresRotation2 {
   statement {
     actions = [

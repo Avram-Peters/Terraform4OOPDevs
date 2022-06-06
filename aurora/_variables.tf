@@ -19,7 +19,7 @@ variable environment {
 variable sso_profile {
   type = string
   description = "Name of the AWS Configured Profile that grants access to Org SSO"
-  default = "sso_profile"
+  default = "sso"
 }
 variable profile {
   type = string

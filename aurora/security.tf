@@ -83,7 +83,7 @@ data aws_iam_policy_document ro_rds_iam_auth_policy {
   statement {
     effect = "Allow"
     actions = ["rds-db:connect"]
-    resources = ["arn:${data.aws_partition.current.partition}:rds-db:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:dbuser:${aws_rds_cluster.aurora_cluster.cluster_resource_id}/ro_{aws:userid}"]
+    resources = ["arn:${data.aws_partition.current.partition}:rds-db:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:dbuser:${aws_rds_cluster.aurora_cluster.cluster_resource_id}/ro_abepeters"]
   }
 }
 resource aws_iam_role_policy ro_rds_policy {
@@ -103,7 +103,7 @@ data aws_iam_policy_document rw_rds_iam_auth_policy {
   statement {
     effect = "Allow"
     actions = ["rds-db:connect"]
-    resources = ["arn:${data.aws_partition.current.partition}:rds-db:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:dbuser:${aws_rds_cluster.aurora_cluster.cluster_resource_id}/rw_{aws:userid}"]
+    resources = ["arn:${data.aws_partition.current.partition}:rds-db:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:dbuser:${aws_rds_cluster.aurora_cluster.cluster_resource_id}/*"]
   }
 }
 resource aws_iam_role_policy rds_policy {

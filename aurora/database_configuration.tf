@@ -2,7 +2,7 @@ resource null_resource database_role_setup {
   depends_on = [aws_rds_cluster_instance.aurora_instance]
 
   provisioner "local-exec" {
-    command = "psql -f ${path.module}/database_configuration.sql;"
+    command = "psql -f ${path.module}/database_configuration_ssm.sql;"
     environment = {
       PGHOST = aws_rds_cluster.aurora_cluster.endpoint
       PGPORT = var.aurora_port

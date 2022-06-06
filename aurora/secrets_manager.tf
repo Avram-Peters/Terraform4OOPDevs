@@ -38,6 +38,7 @@ resource aws_secretsmanager_secret_version secret {
   }
 }
 
+/*
 resource aws_secretsmanager_secret_rotation secret_rotation {
   rotation_lambda_arn = aws_lambda_function.rotator.arn
   secret_id           = aws_secretsmanager_secret.aurora_secret.id
@@ -92,3 +93,4 @@ resource aws_vpc_endpoint secrets_manager_endpoint {
   route_table_ids = []
 
 }
+*/
